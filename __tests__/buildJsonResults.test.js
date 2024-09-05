@@ -89,6 +89,15 @@ describe('buildJsonResults', () => {
     expect(jsonResults.testsuites[1].testsuite[2].testcase[0]._attr.classname).toBe('should bar');
   });
 
+  it('should return the proper owner when ownerName is "John Doe"', () => {
+    const noFailingTestsReport = require('../__mocks__/no-failing-tests.json');
+    jsonResults = buildJsonResults(noFailingTestsReport, '/',
+        Object.assign({}, constants.DEFAULT_OPTIONS, {
+          ownerName: "John Doe"
+        }));
+    expect(jsonResults.testsuites[1].testsuite[2].testcase[0]._attr.owner).toBe('John Doe');
+  });
+
   it('should return the proper filepath when classNameTemplate is "{filepath}"', () => {
     const noFailingTestsReport = require('../__mocks__/no-failing-tests.json');
     jsonResults = buildJsonResults(noFailingTestsReport, '/',

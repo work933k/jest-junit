@@ -80,6 +80,10 @@ const generateTestCase = function(junitOptions, suiteOptions, tc, filepath, file
     testCase.testcase[0]._attr.file = filepath;
   }
 
+  if (junitOptions.ownerName) {
+    testCase.testcase[0]._attr.owner = junitOptions.ownerName;
+  }
+
   // Write out all failure messages as <failure> tags
   // Nested underneath <testcase> tag
   if (tc.status === testFailureStatus || tc.status === testErrorStatus) {
