@@ -67,7 +67,7 @@ Reporter options should also be strings exception for suiteNameTemplate, classNa
 | `JEST_JUNIT_SUITE_NAME` | `suiteNameTemplate` | Template string for `name` attribute of the `<testsuite>`. | `"{title}"` | `{title}`, `{filepath}`, `{filename}`, `{displayName}`
 | `JEST_JUNIT_CLASSNAME` | `classNameTemplate` | Template string for the `classname` attribute of `<testcase>`. | `"{classname} {title}"` | `{classname}`, `{title}`, `{suitename}`, `{filepath}`, `{filename}`, `{displayName}`
 | `JEST_JUNIT_TITLE` | `titleTemplate` | Template string for the `name` attribute of `<testcase>`. | `"{classname} {title}"` | `{classname}`, `{title}`, `{filepath}`, `{filename}`, `{displayName}`
-| `JEST_JUNIT_OWNER_NAME` | `owner` | String for the `owner` attribute of `<testcase>`.` | `undefined` | N/A
+| `JEST_JUNIT_OWNER_NAME` | `ownerName` | `owner` attribute of `<testcase>`. | `undefined` | N/A
 | `JEST_JUNIT_ANCESTOR_SEPARATOR` | `ancestorSeparator` | Character(s) used to join the `describe` blocks. | `" "` | N/A
 | `JEST_JUNIT_ADD_FILE_ATTRIBUTE` | `addFileAttribute` | Add file attribute to the output (validated on CIRCLE CI and GitLab CI). Must be a string. | `"false"` | N/A
 | `JEST_JUNIT_FILE_PATH_PREFIX` | `filePathPrefix` | Prefix to add to the test suite file path. The value will be prefixed using `path.join`. Useful in case of monorepo | `""` | N/A
